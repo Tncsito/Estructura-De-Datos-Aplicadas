@@ -30,7 +30,7 @@ namespace EstructuraDeDatos
                     {
                         //Arreglos
                         case 1:
-                            //
+                            
                             Console.ReadKey();
                             break;
                         //Listas
