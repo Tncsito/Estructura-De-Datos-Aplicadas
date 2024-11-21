@@ -24,7 +24,7 @@ namespace EstructuraDeDatos.Datos
             }
             else
             {
-                nuevo = new NodoArbol(v);
+                nuevo = new NodoArbol(v); //
                 if(raiz == null)
                 {
                     raiz = nuevo;
