@@ -17,11 +17,11 @@ namespace EstructuraDeDatos
                     Console.Clear();
                     Console.WriteLine("\tMenú");
                     Console.WriteLine("-------------------------");
-                    Console.WriteLine("1.- Listas");  //TERMINADO
-                    Console.WriteLine("2.- Pilas");   //TERMINADO
-                    Console.WriteLine("3.- Colas");   //TERMINADO
-                    Console.WriteLine("4.- Arboles"); //PENDIENTE
-                    Console.WriteLine("5.- Salir");   //TERMINADO
+                    Console.WriteLine("1.- Listas");  
+                    Console.WriteLine("2.- Pilas");   
+                    Console.WriteLine("3.- Colas");   
+                    Console.WriteLine("4.- Arboles"); 
+                    Console.WriteLine("5.- Salir");   
                     Console.WriteLine("-------------------------");
                     int Opcion = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
