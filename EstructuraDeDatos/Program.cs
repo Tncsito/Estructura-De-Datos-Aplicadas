@@ -22,7 +22,7 @@ namespace EstructuraDeDatos
                     Console.WriteLine("3.- Colas");   
                     Console.WriteLine("4.- Arboles"); 
                     Console.WriteLine("5.- Salir");   
-                    Console.WriteLine("-------------------------");
+                    Console.WriteLine("-------------------------"); //
                     int Opcion = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
                     switch (Opcion)
