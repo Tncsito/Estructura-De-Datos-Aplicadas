@@ -15,32 +15,26 @@ namespace EstructuraDeDatos
                     Console.WindowHeight = 10;
                     Console.WindowWidth = 25;
                     Console.Clear();
-                    Console.WriteLine("\tMenu");
+                    Console.WriteLine("\tMenú");
                     Console.WriteLine("-------------------------");
-                    Console.WriteLine("1.- Arreglos");//PENDIENTE
-                    Console.WriteLine("2.- Listas");  //TERMINADO
-                    Console.WriteLine("3.- Pilas");   //TERMINADO
-                    Console.WriteLine("4.- Colas");   //TERMINADO
-                    Console.WriteLine("5.- Arboles"); //PENDIENTE
-                    Console.WriteLine("6.- Salir");   //TERMINADO
+                    Console.WriteLine("1.- Listas");  //TERMINADO
+                    Console.WriteLine("2.- Pilas");   //TERMINADO
+                    Console.WriteLine("3.- Colas");   //TERMINADO
+                    Console.WriteLine("4.- Arboles"); //PENDIENTE
+                    Console.WriteLine("5.- Salir");   //TERMINADO
                     Console.WriteLine("-------------------------");
                     int Opcion = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
                     switch (Opcion)
                     {
-                        //Arreglos
-                        case 1:
-                            
-                            Console.ReadKey();
-                            break;
                         //Listas
-                        case 2:
+                        case 1:
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.SetWindowSize(25, 15);
                             Console.SetBufferSize(25, 15);
                             Listas Lista = new Listas();
-
-                            while (true)
+                            bool pppp = true;
+                            while (pppp)
                             {
                                 try
                                 {
@@ -54,7 +48,7 @@ namespace EstructuraDeDatos
                                     Console.WriteLine("5.- Modificar nodo");         
                                     Console.WriteLine("6.- Buscar Valor");           
                                     Console.WriteLine("7.- Imprimir Lista");         
-                                    Console.WriteLine("8.- Salir");                  
+                                    Console.WriteLine("8.- Regresar");                  
                                     Console.WriteLine("-------------------------");
                                     Console.Write("Seleccionar Opción => ");
                                     int opc = int.Parse(Console.ReadLine());
@@ -130,13 +124,15 @@ namespace EstructuraDeDatos
                                             Console.SetBufferSize(60, 15);
                                             Lista.Print();
                                             break;
-                                        case 8: //Salir
-                                            return;
+                                        case 8: //Regresar
+                                            pppp = false;
+                                            break;
                                         default:
                                             Console.WriteLine("\nPor favor Seleccione una Opción");
                                             break;
 
                                     }
+                                    if (opc != 8)
                                     Console.Write("\n\n\n\n\n\n\t<Presiona cualquier tecla para continuar>");
                                     Console.ReadKey();
                                 }
@@ -153,7 +149,7 @@ namespace EstructuraDeDatos
                             }
                             break;
                         //Pilas
-                        case 3:
+                        case 2:
                             bool o = true;
                             int n = 99;
                             Pilas a = new Pilas(n); // Inicializa la pila fuera del bucle
@@ -176,7 +172,7 @@ namespace EstructuraDeDatos
                                     Console.WriteLine("");
                                     Console.WriteLine("4.-Imprimir");
                                     Console.WriteLine("");
-                                    Console.WriteLine("5.-Salir");
+                                    Console.WriteLine("5.-Regresar");
                                     Console.WriteLine("------------------------------");
                                     Console.Write("Seleccionar Opción => ");
                                     int opción = int.Parse(Console.ReadLine());
@@ -250,7 +246,7 @@ namespace EstructuraDeDatos
                             Console.ReadKey();
                             break;
                         //Colas
-                        case 4:
+                        case 3:
                             bool p = true;
                             int n1 = 99;
                             Colas Cola = new Colas(n1);
@@ -269,7 +265,7 @@ namespace EstructuraDeDatos
                                     Console.WriteLine("2.- Insert");
                                     Console.WriteLine("3.- Extract");
                                     Console.WriteLine("4.- Print");
-                                    Console.WriteLine("5.- Exit");
+                                    Console.WriteLine("5.- Return");
                                     Console.WriteLine("-------------------------");
                                     Console.Write("Select Option => ");
                                     int opc = int.Parse(Console.ReadLine());
@@ -319,10 +315,13 @@ namespace EstructuraDeDatos
                                             break;
 
                                     }
-                                    Console.WindowHeight = 15;
-                                    Console.WindowWidth = 60;
-                                    Console.Write("\n\n\n\n\n\n\t<Presiona cualquier tecla para continuar>");
-                                    Console.ReadKey();
+                                    if(opc != 5) 
+                                    { 
+                                        Console.WindowHeight = 15;
+                                        Console.WindowWidth = 60;
+                                        Console.Write("\n\n\n\n\n\n\t<Presiona cualquier tecla para continuar>");
+                                        Console.ReadKey();
+                                    }
                                 }
                                 catch (Exception)
                                 {
@@ -337,12 +336,97 @@ namespace EstructuraDeDatos
                             Console.ReadKey();
                             break;
                         //Arboles
-                        case 5: 
+                        case 4:
+                            Arboles t = new Arboles();
+                            bool bol = true;
+                            while (bol)
+                            {
+                                try
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    Console.WindowHeight = 10;
+                                    Console.WindowWidth = 25;
+                                    Console.Clear();
+                                    Console.WriteLine("\tArboles\r\n" +
+                                              "---------------------------------\r\n" +
+                                              "1.- Insertar\r\n" +
+                                              "2.- Tamaño\r\n" +
+                                              "3.- Altura\r\n" +
+                                              "4.- LRP\r\n" +
+                                              "5.- Recorrido \r\n" +
+                                              "6.- Regresar\r\n" +
+                                              "_____________________\r\n" +
+                                              "Selecciónar Opción => ");
+                                    int opca = int.Parse(Console.ReadLine());
+                                    Console.Clear();
+                                    switch (opca)
+                                    {
+                                        case 1: //Insert
+                                            Console.WindowHeight = 10;
+                                            Console.WindowWidth = 35;
+                                            Console.Write("Escribe numero a insertar => ");
+                                            int numero = Convert.ToInt32(Console.ReadLine());
+                                            t.Insertar(numero);
+                                            Console.ReadKey();
+                                            break;
+                                        case 2: //Tamaño
+                                            Console.WindowHeight = 10;
+                                            Console.WindowWidth = 35;
 
+                                            break;
+                                        case 3: //Altura
+                                            Console.WindowHeight = 10;
+                                            Console.WindowWidth = 35;
+                                            t.Recorrido(t.raiz);
+                                            Console.ReadKey();
+                                            break;
+                                        case 4: //LRP
+                                            Console.WindowHeight = 10;
+                                            Console.WindowWidth = 35;
+
+                                            break;
+                                        case 5: //Recorrido
+                                            Console.WindowHeight = 10;
+                                            Console.WindowWidth = 35;
+
+                                            break;
+                                        case 6: //Regresar
+                                            Console.WindowHeight = 15;
+                                            Console.WindowWidth = 60;
+                                            bol = false;
+                                            break;
+                                        default:
+                                            Console.WriteLine("\nPor favor Seleccione una Opción");
+                                            break;
+                                    }
+                                    Console.Clear();
+                                    Console.SetWindowSize(45, 15);
+                                    Console.SetBufferSize(45, 15);
+                                    Console.Write("\n\n\n\n\n\n\t<Presiona cualquier tecla para continuar>");
+                                    Console.ReadKey();
+                                }
+                                catch (Exception)
+                                {
+                                    Console.SetWindowSize(45, 15);
+                                    Console.SetBufferSize(45, 15);
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.Clear();
+                                    Console.WriteLine("\nElemento no valido (ENTER para continuar)\n");
+                                    Console.ReadKey();
+                                }
+
+                            }
+                            //t.Insertar(15);
+                            //t.Insertar(8);
+                            //t.Insertar(23);
+                            //t.Insertar(2);
+                            //t.Insertar(25);
+                            //t.Insertar(12);
+                            //t.Recorrido(t.raiz);
                             Console.ReadKey();
                             break;
                         //Salir
-                        case 6: 
+                        case 5: 
                             Salir = true;
                             Console.ReadKey();
                             break;
