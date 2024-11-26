@@ -24,8 +24,10 @@ namespace EstructuraDeDatos.Datos
             }
             else
             {
+
                 nuevo = new NodoArbol(v);
                 if (raiz == null)
+
                 {
                     raiz = nuevo;
                     obs = nuevo;
