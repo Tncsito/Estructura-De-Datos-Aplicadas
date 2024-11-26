@@ -22,8 +22,10 @@ namespace EstructuraDeDatos
                     Console.WriteLine("2.- Pilas");   
                     Console.WriteLine("3.- Colas");   
                     Console.WriteLine("4.- Arboles"); 
-                    Console.WriteLine("5.- Salir");   
-                    Console.WriteLine("-------------------------"); //
+
+                    Console.WriteLine("5.- Salir");
+                    Console.WriteLine("-------------------------");
+                  
                     int Opcion = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
                     switch (Opcion)
@@ -373,8 +375,10 @@ namespace EstructuraDeDatos
                                         case 2: //Tamaño
                                             Console.WindowHeight = 10;
                                             Console.WindowWidth = 35;
-
+                                            Console.WriteLine($"Tamaño del árbol: {t.Tamaño(t.raiz)}");
+                                            Console.ReadKey();
                                             break;
+
                                         case 3: //Altura
                                             Console.WindowHeight = 10;
                                             Console.WindowWidth = 35;
