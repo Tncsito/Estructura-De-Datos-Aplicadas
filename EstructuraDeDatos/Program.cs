@@ -1,4 +1,5 @@
 ﻿using EstructuraDeDatos.Datos;
+using EstructuraDeDatos.Nodo;
 
 namespace EstructuraDeDatos
 {
@@ -21,8 +22,10 @@ namespace EstructuraDeDatos
                     Console.WriteLine("2.- Pilas");   
                     Console.WriteLine("3.- Colas");   
                     Console.WriteLine("4.- Arboles"); 
+
                     Console.WriteLine("5.- Salir");
                     Console.WriteLine("-------------------------");
+                  
                     int Opcion = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
                     switch (Opcion)
@@ -385,12 +388,12 @@ namespace EstructuraDeDatos
                                         case 4: //LRP
                                             Console.WindowHeight = 10;
                                             Console.WindowWidth = 35;
-
+                                            //t.LRP();
                                             break;
                                         case 5: //Recorrido
                                             Console.WindowHeight = 10;
                                             Console.WindowWidth = 35;
-
+                                            t.Recorrido(t.raiz, t.Tamaño());
                                             break;
                                         case 6: //Regresar
                                             Console.WindowHeight = 15;

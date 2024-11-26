@@ -24,8 +24,10 @@ namespace EstructuraDeDatos.Datos
             }
             else
             {
-                nuevo = new NodoArbol(v); //
-                if(raiz == null)
+
+                nuevo = new NodoArbol(v);
+                if (raiz == null)
+
                 {
                     raiz = nuevo;
                     obs = nuevo;
@@ -71,6 +73,24 @@ namespace EstructuraDeDatos.Datos
                 }
             }
             return Found;
+        }
+        public int LRP(NodoArbol nodo, int tamaño)
+        {
+            if (nodo == null)
+            {
+                return 0;
+            }
+
+            // Mostrar el nodo actual tantas veces como su profundidad
+            for (int i = 0; i <= tamaño; i++)
+            {
+                Console.Write($"{nodo.valor},");
+            }
+
+            // Sumar la profundidad actual y continuar con los hijos
+            return tamaño +
+                   LRP(nodo.izq, tamaño + 1) +
+                   LRP(nodo.der, tamaño + 1); //Suma el tamaño
         }
 
         public void Recorrido (NodoArbol q)
