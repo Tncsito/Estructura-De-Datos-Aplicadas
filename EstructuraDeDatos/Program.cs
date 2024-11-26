@@ -1,4 +1,5 @@
 ﻿using EstructuraDeDatos.Datos;
+using EstructuraDeDatos.Nodo;
 
 namespace EstructuraDeDatos
 {
@@ -383,12 +384,12 @@ namespace EstructuraDeDatos
                                         case 4: //LRP
                                             Console.WindowHeight = 10;
                                             Console.WindowWidth = 35;
-
+                                            //t.LRP();
                                             break;
                                         case 5: //Recorrido
                                             Console.WindowHeight = 10;
                                             Console.WindowWidth = 35;
-
+                                            t.Recorrido(t.raiz, t.Tamaño());
                                             break;
                                         case 6: //Regresar
                                             Console.WindowHeight = 15;
