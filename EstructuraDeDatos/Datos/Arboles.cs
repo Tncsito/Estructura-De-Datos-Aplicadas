@@ -86,5 +86,13 @@ namespace EstructuraDeDatos.Datos
                 Console.Write($"{q.valor}, ");
             }
         }
+
+        public int Tamaño(NodoArbol nodo)
+        {
+            if (nodo == null) 
+                return 0;
+            return 1 + Tamaño(nodo.izq) + Tamaño(nodo.der);
+        }
+
     }
 }
