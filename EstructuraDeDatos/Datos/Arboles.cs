@@ -74,25 +74,28 @@ namespace EstructuraDeDatos.Datos
             }
             return Found;
         }
-        public int LRP(NodoArbol nodo, int tamaño)
+        public void LRP(NodoArbol nodo)
         {
-            if (nodo == null)
-            {
-                return 0;
-            }
+            int sumaTotal = 0; // Suma los pasos que da en cada longitud
+            int totalNodos = 0; // Cuenta los nodos que va pasando
 
-            // Mostrar el nodo actual tantas veces como su profundidad
-            for (int i = 0; i <= tamaño; i++)
+            // no puedo usar la otra clase por unos problemas aparte de que acá lo adapté mejor
+            void CalcularDistancia(NodoArbol actual, int pasos)
             {
-                Console.Write($"{nodo.valor},");
+                if (actual == null)
+                    return;
+                sumaTotal += pasos;
+                totalNodos++;
+                //Acá abajo incremento el arbol para ir recorriendo
+                CalcularDistancia(actual.izq, pasos + 1);
+                CalcularDistancia(actual.der, pasos + 1);
             }
-
-            // Sumar la profundidad actual y continuar con los hijos
-            return tamaño +
-                   LRP(nodo.izq, tamaño + 1) +
-                   LRP(nodo.der, tamaño + 1); //Suma el tamaño
+            // Acá se mueve
+            CalcularDistancia(nodo, 1);
+            double promedio = (double)sumaTotal / totalNodos;
+            Console.WriteLine($"Suma total de distancias: {sumaTotal}");
+            Console.WriteLine($"Promedio: {promedio:F2}");
         }
-
         public void Recorrido (NodoArbol q)
         {
             if (q != null)
@@ -106,7 +109,18 @@ namespace EstructuraDeDatos.Datos
                 Console.Write($"{q.valor}, ");
             }
         }
-
+        public int Altura(NodoArbol nodo)
+        {
+            if (nodo == null)
+                return 0;  //altura de arbol es 0
+            else
+            {
+                // La altura es 1 + la mayor altura de los subárboles izquierdo y derecho
+                int alturaIzq = Altura(nodo.izq);
+                int alturaDer = Altura(nodo.der);
+                return Math.Max(alturaIzq, alturaDer) + 1;
+            }
+        }
         public int Tamaño(NodoArbol nodo)
         {
             if (nodo == null) 

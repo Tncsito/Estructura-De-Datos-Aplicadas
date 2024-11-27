@@ -22,7 +22,6 @@ namespace EstructuraDeDatos
                     Console.WriteLine("2.- Pilas");   
                     Console.WriteLine("3.- Colas");   
                     Console.WriteLine("4.- Arboles"); 
-
                     Console.WriteLine("5.- Salir");
                     Console.WriteLine("-------------------------");
                   
@@ -382,18 +381,20 @@ namespace EstructuraDeDatos
                                         case 3: //Altura
                                             Console.WindowHeight = 10;
                                             Console.WindowWidth = 35;
-                                            t.Recorrido(t.raiz);
-                                            Console.ReadKey();
+                                            Console.WriteLine($"Altura del árbol: {t.Altura(t.raiz)}");
+                                            Console.ReadKey(); 
                                             break;
-                                        case 4: //LRP
+                                        case 4: // LRP
                                             Console.WindowHeight = 10;
                                             Console.WindowWidth = 35;
-                                            //t.LRP();
+                                            t.LRP(t.raiz);
+                                            Console.ReadKey();
                                             break;
                                         case 5: //Recorrido
                                             Console.WindowHeight = 10;
                                             Console.WindowWidth = 35;
-                                            t.Recorrido(t.raiz, t.Tamaño());
+                                            t.Recorrido(t.raiz);
+                                            Console.ReadKey();
                                             break;
                                         case 6: //Regresar
                                             Console.WindowHeight = 15;
@@ -405,15 +406,15 @@ namespace EstructuraDeDatos
                                             break;
                                     }
                                     Console.Clear();
-                                    Console.SetWindowSize(45, 15);
-                                    Console.SetBufferSize(45, 15);
+                                    Console.SetWindowSize(60, 15);
+                                    Console.SetBufferSize(60, 15);
                                     Console.Write("\n\n\n\n\n\n\t<Presiona cualquier tecla para continuar>");
                                     Console.ReadKey();
                                 }
                                 catch (Exception)
                                 {
-                                    Console.SetWindowSize(45, 15);
-                                    Console.SetBufferSize(45, 15);
+                                    Console.SetWindowSize(60, 15);
+                                    Console.SetBufferSize(60, 15);
                                     Console.ForegroundColor = ConsoleColor.Red;
                                     Console.Clear();
                                     Console.WriteLine("\nElemento no valido (ENTER para continuar)\n");
